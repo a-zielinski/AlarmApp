@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image_logo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/global_menu_logo_height"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/global_margin_large"
+            android:layout_marginEnd="@dimen/global_margin_large"
+            android:layout_marginTop="@dimen/global_margin_double_large"
+            android:layout_marginBottom="@dimen/global_margin_double_large"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logo" />
+        <App.Android.Custom.MyScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_buttons_layout"
+            android:layout_below="@id/image_logo">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_benefit_basket"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+				<include
+                    android:id="@+id/menu_button_free_rides"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_map"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_my_account"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_active_reservation"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_history"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_prices"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_guides"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_settings"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+                <include
+                    android:id="@+id/menu_button_login"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+                <include
+                    android:id="@+id/menu_button_logout"
+                    layout="@layout/drawer_menu_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    style="@style/Divider" />
+            </LinearLayout>
+        </App.Android.Custom.MyScrollView>
+        <LinearLayout
+            android:id="@+id/bottom_buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/global_margin_large"
+            android:paddingBottom="@dimen/global_padding_large"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/image_phone_contact"
+                    android:layout_width="@dimen/menu_contact_items_width"
+                    android:layout_height="@dimen/menu_contact_items_height"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/image_facebook_contact"
+                    android:layout_width="@dimen/menu_contact_items_width"
+                    android:layout_height="@dimen/menu_contact_items_height"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/image_twitter_contact"
+                    android:layout_width="@dimen/menu_contact_items_width"
+                    android:layout_height="@dimen/menu_contact_items_height"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/image_instagram_contact"
+                    android:layout_width="@dimen/menu_contact_items_width"
+                    android:layout_height="@dimen/menu_contact_items_height"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.design.widget.NavigationView>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
