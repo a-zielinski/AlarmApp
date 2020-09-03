@@ -1,4 +1,4 @@
-package com.azapps.alarmapp.di
+package com.azapps.alarmapp.di.module
 
 import com.azapps.alarmapp.ui.main.alarmringing.AlarmRingingFragment
 import com.azapps.alarmapp.ui.main.setalarm.SetAlarmFragment

@@ -1,4 +1,4 @@
-package com.azapps.alarmapp.di
+package com.azapps.alarmapp.di.module
 
 import android.app.Application
 import androidx.room.Room

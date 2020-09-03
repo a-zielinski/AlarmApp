@@ -116,7 +116,7 @@ class SetAlarmFragment : DaggerFragment() {
             onStartNewAlarmObserved(it)
         })
 
-        viewModel.getAllAlarms.observe(viewLifecycleOwner, Observer {
+        viewModel.getAllAlarms().observe(viewLifecycleOwner, Observer {
             adapter.setAlarms(it)
         })
 
