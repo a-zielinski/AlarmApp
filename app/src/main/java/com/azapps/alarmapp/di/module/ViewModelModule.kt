@@ -1,7 +1,9 @@
-package com.azapps.alarmapp.di
+package com.azapps.alarmapp.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.azapps.alarmapp.di.util.DaggerViewModelFactory
+import com.azapps.alarmapp.di.util.ViewModelKey
 import com.azapps.alarmapp.ui.main.MainViewModel
 import com.azapps.alarmapp.ui.main.alarmringing.AlarmRingingViewModel
 import com.azapps.alarmapp.ui.main.setalarm.SetAlarmViewModel

@@ -1,4 +1,4 @@
-package com.azapps.alarmapp.di
+package com.azapps.alarmapp.di.util
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

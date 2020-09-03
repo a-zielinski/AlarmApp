@@ -32,6 +32,7 @@ class AlarmRepositoryImpl @Inject constructor(private val alarmDao: AlarmDao) : 
 
     override fun getAllAlarms(): LiveData<List<Alarm>> {
         return alarmDao.getAllAlarms()
+
     }
 
     override suspend fun turnAlarmOff(alarm: Alarm) {
