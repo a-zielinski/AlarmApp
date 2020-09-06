@@ -1,17 +1,18 @@
 package com.azapps.alarmapp.ui.main.setalarm
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.azapps.alarmapp.utils.BaseTestCase
-import com.azapps.alarmapp.utils.InstantExecutorExtension
 import com.azapps.alarmapp.data.db.entities.Alarm
 import com.azapps.alarmapp.data.repository.AlarmRepository
+import com.azapps.alarmapp.utils.BaseTestCase
+import com.azapps.alarmapp.utils.InstantExecutorExtension
 import com.azapps.alarmapp.utils.getOrAwaitValue
-import com.nhaarman.mockitokotlin2.*
+import com.nhaarman.mockitokotlin2.any
+import com.nhaarman.mockitokotlin2.eq
+import com.nhaarman.mockitokotlin2.verify
+import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.runBlockingTest
-import org.hamcrest.core.IsEqual
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
