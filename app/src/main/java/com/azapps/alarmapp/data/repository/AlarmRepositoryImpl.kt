@@ -13,17 +13,15 @@ import javax.inject.Singleton
 
 @Singleton
 class AlarmRepositoryImpl @Inject constructor(private val alarmDao: AlarmDao) : AlarmRepository {
-    private val alarmRinging = MutableLiveData<Alarm>(null)
+    private val alarmRinging = MutableLiveData<Alarm?>(null)
 
-    override val getAlarmRinging: LiveData<Alarm> = alarmRinging
+    override val getAlarmRinging: LiveData<Alarm?> = alarmRinging
 
     private val alarmStopped = LiveEvent<Unit>()
     override val getOnAlarmStopped: LiveData<Unit> = alarmStopped
 
     override suspend fun turnAlarmOn(alarm: Alarm) {
-        CoroutineScope(Dispatchers.Main).launch {
-            alarmRinging.value = alarm
-        }
+            alarmRinging.postValue(alarm)
     }
 
     override suspend fun getAlarmById(alarmId: Int): Alarm? {
@@ -35,14 +33,15 @@ class AlarmRepositoryImpl @Inject constructor(private val alarmDao: AlarmDao) : 
 
     }
 
-    override suspend fun turnAlarmOff(alarm: Alarm) {
-        alarmDao.delete(alarm.id)
+    override suspend fun delete(alarm: Alarm) {
+        if (alarm.id > 0)
+            alarmDao.delete(alarm.id)
+    }
 
+    override fun turnAlarmOff(alarm: Alarm) {
         if (alarmRinging.value?.id == alarm.id) {
-            CoroutineScope(Dispatchers.Main).launch {
-                alarmRinging.value = null
-                alarmStopped.value = Unit
-            }
+            alarmRinging.postValue(null)
+            alarmStopped.postValue(Unit)
         }
     }
 

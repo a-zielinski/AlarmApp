@@ -39,10 +39,10 @@ class SetAlarmViewModelTest : BaseTestCase() {
         // arrange
 
         // act
-        model.turnAlarmOff(anyAlarm)
+        model.delete(anyAlarm)
 
         // assert
-        verify(repository).turnAlarmOff(anyAlarm)
+        verify(repository).delete(anyAlarm)
     }
 
     @Test

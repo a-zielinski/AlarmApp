@@ -31,9 +31,9 @@ class SetAlarmViewModel @Inject constructor(
      Transformations.map(alarmRepository.getAllAlarms()) { data -> data }
 
 
-    fun turnAlarmOff(alarm: Alarm) {
+    fun delete(alarm: Alarm) {
         viewModelScope.launch(ioContext) {
-            alarmRepository.turnAlarmOff(alarm)
+            alarmRepository.delete(alarm)
         }
     }
 
