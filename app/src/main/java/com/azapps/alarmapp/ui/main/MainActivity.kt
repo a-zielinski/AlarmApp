@@ -48,7 +48,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, navController)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getAlarmRinging.observe(this, Observer { onAlarmRingingChanged(it) })
+        viewModel.getAlarmRinging().observe(this, Observer { onAlarmRingingChanged(it) })
     }
 
     private fun onAlarmRingingChanged(alarm : Alarm?) {
@@ -62,7 +62,7 @@ class MainActivity : DaggerAppCompatActivity() {
     }
 
     override fun onDestroy() {
-        if (viewModel.getAlarmRinging.value != null) {
+        if (viewModel.getAlarmRinging().value != null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

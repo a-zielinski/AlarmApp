@@ -33,7 +33,7 @@ class AlarmRingingFragment : DaggerFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this, viewModelFactory).get(AlarmRingingViewModel::class.java)
-        viewModel.getAlarmRinging.observe(viewLifecycleOwner, Observer { onAlarmRinging(it) })
+        viewModel.getAlarmRinging().observe(viewLifecycleOwner, Observer { onAlarmRinging(it) })
 
 
         bt_stop_alarm.setOnClickListener {
