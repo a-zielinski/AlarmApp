@@ -1,14 +1,11 @@
 package com.azapps.alarmapp.ui.main.alarmringing
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.azapps.alarmapp.data.db.entities.Alarm
 import com.azapps.alarmapp.data.repository.AlarmRepository
 import com.azapps.alarmapp.utils.BaseTestCase
 import com.azapps.alarmapp.utils.InstantExecutorExtension
 import com.azapps.alarmapp.utils.getOrAwaitValue
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.eq
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -63,7 +60,7 @@ class AlarmRingingViewModelTest : BaseTestCase() {
     }
 
     @Test
-    fun `should stop the alarm when there is any`() = runBlockingTest {
+    fun `should turn off and delete the alarm when there is any`() = runBlockingTest {
         //arrange
         whenever(repository.getAlarmRinging).thenReturn(MutableLiveData(anyAlarm))
 
@@ -72,5 +69,6 @@ class AlarmRingingViewModelTest : BaseTestCase() {
 
         // assert
         verify(repository).turnAlarmOff(anyAlarm)
+        verify(repository).delete(anyAlarm)
     }
 }

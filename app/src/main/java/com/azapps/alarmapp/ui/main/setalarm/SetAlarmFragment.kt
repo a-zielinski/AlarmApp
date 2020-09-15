@@ -123,7 +123,7 @@ class SetAlarmFragment : DaggerFragment() {
     }
 
     private fun onAlarmDeleted(alarm: Alarm) {
-        viewModel.turnAlarmOff(alarm)
+        viewModel.delete(alarm)
     }
 
 

@@ -7,10 +7,10 @@
     <TextView
         android:id="@+id/tv_alarm_ringing"
         android:layout_width="200dp"
-        android:backgroundTint="@color/design_default_color_error"
         android:layout_height="wrap_content"
         android:layout_above="@id/bt_stop_alarm"
         android:layout_centerInParent="true"
+        android:backgroundTint="@color/design_default_color_error"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="Alarm Title" />
