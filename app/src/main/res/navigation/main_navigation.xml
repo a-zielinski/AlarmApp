@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/setAlarmFragment">
+    <fragment
+        android:id="@+id/setAlarmFragment"
+        android:name="com.azapps.alarmapp.ui.main.setalarm.SetAlarmFragment"
+        android:label="fragment_set_alarm"
+        tools:layout="@layout/fragment_set_alarm" >
+        <action
+            android:id="@+id/action_setAlarmFragment_to_alarmRingingFragment"
+            app:destination="@id/alarmRingingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmRingingFragment"
+        android:name="com.azapps.alarmapp.ui.main.alarmringing.AlarmRingingFragment"
+        tools:layout="@layout/fragment_alarm_ringing"
+        android:label="AlarmRingingFragment">
+        <action
+            android:id="@+id/action_alarmRingingFragment_to_setAlarmFragment"
+            app:destination="@id/setAlarmFragment" />
+    </fragment>
+</navigation>
